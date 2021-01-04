@@ -1,12 +1,15 @@
 const links = [
    {
-     label: "Week1 notes",
-     url: "week1/index.html"
-   }
- ]
+      label: "Week 1 Notes",
+      url: "week1/index.html"
+    }
+ ];
+
 
  let toc = document.getElementById("toc");
 
- for(let link in links) {
-    toc.append(`<li><a href="${link.url}">${link.label}</a></li>`);
- }
+ links.forEach(function(link) {
+   var li = document.createElement("li");
+   li.innerHTML = `<a href="${link.url}">${link.label}</a>`;
+   toc.appendChild(li);
+ });
