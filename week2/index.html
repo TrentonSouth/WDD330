@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WDD 330 - Week 2</title>
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+   <div id="content">
+<div class="bold section">Notes: (<a href="../index.html">back</a>)</div>
+<pre>
+   A fragment of code that produces a value is called an expression. Every value that is written literally is an expression. An expression between parentheses is alson an expression, as is a binary operator applied to two expressions or a unary operator applied to one.
+
+   When a binding points at a value, that does not mean it is tied to that value forever. The = operator can be used at any time on existing bindings to disconnect them from their current value and have them point to a new one.
+   
+   Binding names cannot be keywords. They must start with a letter, _, or $. They can contain numbers after the first letter. There cannot be any spaces. They should be descriptive and in camel case.
+     Good
+       dayOfWeek
+       firstName
+       _date
+       $fullName
+     Bad
+       !willNotWork
+       3wishes
+       class
+   
+   Conditional Execution
+     if/else
+     switch
+   
+   Loops
+     For
+     While
+     Do While
+     
+   Breaking out of a loop - Having a condition false is not the only way to break out of a loop. You can use the break command at any time to exit the loop.
+     
+     This code
+</pre>
+<pre class="prettyprint">
+      <code>
+      let i = 0;
+      while (true) {
+        if (i < 10) {
+         break;
+       }
+       i++;
+      }
+   </code>
+</pre>
+<pre>
+      is the same as this code.
+      <pre class="prettyprint">
+         <code>      
+      while (i < 10) {
+        i++;
+      }
+   </pre>
+   <pre>    
+   Executing a function is called invoking, calling, or applying it.
+   
+   Values given to a function are called arguments.
+   
+   When a function produces a value, it is said to return a value.
+   
+   A group of statments wrapped in {} is called a block.
+   
+   Each binding has a scope, which is the part of the program in which the binding is visible. Variables in scope of the entire program are called global.
+   
+   Arrow functions use the () first and then the arrow => and then the block of code.
+   
+   You can send extra arguments to a function or you can send to few. If you send extra they are ignored. If you send to few, the remaining are undefined.
+   
+   Recursion is when a function calls itself. There needs to be a way to break out of it or it will cause a stack overflow.
+   
+</pre>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</html>

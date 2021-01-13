@@ -1,7 +1,12 @@
+#content {
+   padding: 0 50px;
+}
 .bold {
    font-weight: bold;
 }
-
+.prettyprint {
+   background-color:lightgray;
+}
 .section {
    margin-top:20px;
 }
