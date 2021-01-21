@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WDD 330 - Week 2</title>
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+   <div id="content">
+<div class="bold section">Week 3 Notes: (<a href="../index.html">back</a>)</div>
+<pre>
+**This**
+It's common that an object method needs to access the information stored in the object to do its job.
+To access the object, a method can use the this keyword.
+
+The value of this is the object, the one used to call the method.
+
+You can use the object name instead of this, but it can be unreliable if you copy that object code to one with a different name. using this prevents that.
+
+In JavaScript, keyword this behaves unlike most other programming languages. It can be used in any function, even if it’s not a method of an object.
+
+In JavaScript this is "free", its value is evaluated at call-time and does not depend on where the method was declared, but rather on what object is "before the dot".
+
+Arrow functions have no "this" Arrow functions are special: they don’t have their "own" this. If we reference this from such a function, it’s taken from the outer "normal" function.
+
+You can chain calls to functions like this object.function().function().function();
+
+**Novice to Ninja**
+
+If a property’s value is a function, it is known as a method
+
+Objects are often used to keep any related information and functionality together in the same place.
+
+All objects are mutable at any time when a program is running. This means that its properties and methods can be changed or removed, and new properties and methods can be added to the object, even if it was declared using const.
+
+ES6 provided a shorthand method of creating objects if a property key is the same as a variable name that the property value is assigned to:
+const name = 'Iron Man';
+const realName = 'Tony Stark';
+
+// long way
+const ironMan = { name: name, realName: realName };
+
+// short ES6 way
+const ironMan = { name, realName };
+
+The new Symbol date type can also be used as a computed property key:
+
+A new property can be added to an object using a symbol as a key if the square bracket notation is used:
+
+The in operator can be used to check whether an object has a particular property.
+
+hasOwnProperty only looks at the object referenced where "in" looks at objects that the object is inherited from.
+
+It's important to note that properties don’t always appear in the order they were entered. An object is not an ordered list like an array, set or map, so you should never rely on the properties being in a certain order.
+
+An important concept to get your head around is that objects are assigned by reference. This means that if a variable is assigned to an object that already exists, it will simply point to the exact same space in memory. So any changes made using either reference will affect the same object.
+
+An object literal can be passed as a parameter to a function. This is useful when there are a large number of parameters, as it allows the arguments to be provided by name and in any order. This means you don’t have to remember the order to enter them when invoking a function.
+
+JSON - I am very comfortable with JSON
+
+The Math object is a built-in object that has several properties representing mathematical constants, as well as methods that carry out a number of common mathematical operations.
+
+Math.PI // The ratio of the circumference and diameter of a circle
+<< 3.141592653589793
+
+Math.SQRT2 // The square root of 2
+<< 1.4142135623730951
+
+Math.SQRT1_2 // The reciprocal of the square root of 2
+<< 0.7071067811865476
+
+Math.E // Euler's constant
+<< 2.718281828459045
+
+Math.LN2 // The natural logarithm of 2
+<< 0.6931471805599453
+
+Math.LN10 // The natural logarithm of 10
+<< 2.302585092994046
+
+Math.LOG2E // Log base 2 of Euler's constant
+<< 1.4426950408889634
+
+Math.LOG10E // Log base 10 of Euler's constant
+<< 0.4342944819032518
+
+</pre>
+<pre class="prettyprint">
+Math.abs(-3) // Returns 3 because that is the absolute value
+Math.ceil(4.2) // Returns the next higher number or in this case 5. Unless it is a whole number and then it remains unchanged.
+Math.floor(4.2) // Returns the last whole number or in this case 4. Unless it is a whole number and then ir remains unchanged.
+Math.round(4.5) // Returns the number to the nearest integer. In this case 5.
+Math.trunc(4.9) // Returns the whole number. In this case 4
+Math.exp(1) // Returns e to the x, where x is the argument, and e is Euler's number
+/******
+Math.exp does not make sense to me. I don't know how it would be used or why.
+******/
+Math.pow(2,3) // Raises any number (the first argument) to the power of another number (the second argument).
+Math.sqrt(25) // Returns the positive square root of the number provided. In this case 5
+Math.cbrt(8) // Returns the cube root. In this case 2
+Math.hypot(3,4) // Returns the sum of all the square roots of the of all arguments passed. In this case 3 squared + 4 squared. You can pass as many numbers as you want.
+Math.log() // Returns the natural logarithm of a number. Much of the power of logarithms is their usefulness in solving exponential equations.
+Math.log2(8) // Logarithm in base 2. 8 is 2 to the power of 3 so 3 is returned
+Math.log10(1000000) // Logarithm in base 10. 1 million is 10 to the power of 6, so 6 is returned.
+Math.max(1,2,3) // Returns the largest number of the set provided. In this case 3
+Math.min() // Returns the smallest number of the set provided. In this case 1
+// Trigonometric Functions
+Math.sin(Math.PI/6) //  Returns the sine of an angle
+Math.cos(Math.PI/6) // Returns the cosine of an angle
+Math.tan(Math.PI/4) // Returns the tangent of an angle
+Math.asin(1) // Returns the arcsine of a number. The result is an angle
+Math.acos(1) // Returns the arccosine of a number
+Math.atan(Math.sqrt(3)) // Returns the arctangent of a number
+Math.sinh(1) // Returns the hyperbolic sine of a number, that can be expressed using the constant e
+Math.cosh(0) // Returns the hyperbolic cosine of a number, that can be expressed using the constant e
+Math.tanh(10) // Returns the hyperbolic tangent of a number
+Math.atanh(0.99999999958776927) //
+Math.random() // Returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1) 
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+</pre>
+<pre>
+
+Look into the decimal.js library
+
+Date objects contain information about dates and times. Each object represents a single moment in time.
+const today = new Date();
+today.toString();
+<< 'Tue Feb 14 2017 16:35:18 GMT+0000 (GMT)'
+
+For dates, use the moment.js or the day.js library
+
+Regular Expressions
+
+There are two ways to create a regular expression. The first, and preferred way, is to use the literal notation of writing the regular expression between forward slashes.
+
+const pattern = /[a-zA-Z]+ing$/;
+
+OR
+
+const pattern = new RegExp('[a-zA-Z]+ing');
+
+pattern.test('joking'); // True
+pattern.test('nope'); // False
+
+Special Characters
+In a regular expression, there are a number of characters that have a special
+meaning, commonly known as metacharacters:
+. matches any character, except line breaks
+\w matches any word character, and is equivalent to [A-Za-z0-9_]
+\W matches any non-word character, and is equivalent to [\^A-Za-z0-9_]
+\d matches any digit character, and is equivalent to [0-9]
+\D matches any non-digit character, and is equivalent to [^0-9]
+\s matches any whitespace character, and is equivalent to [ \t\r\n\f]
+\S matches any non-whitespace character, and is equivalent to [^ \t\r\n\f]
+
+Modifiers
+Modifiers can be placed after a token to deal with multiple occurrences of that token:
+? makes the preceding token in the regular expression optional
+* matches one or more occurrences of the preceding token
++ matches one or more occurrences of the preceding token
+{n} matches n occurrences of the preceding token
+{n,} matches at least n occurrences of the pattern
+Objects 207{,m}matches at most m occurrences of the preceding token
+{n,m} matches at least n and at most m occurrences of the preceding token
+^ marks the position immediately before the first character in the string
+$ marks the position immediately after the last character in the string
+Any special characters or modifiers can be escaped using a backslash. So if you wanted to match a question mark, ?, you would need to use the regular expression /\?/.
+
+Document Object Model
+The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that form a tree-like structure.
+
+Document.body returns the body element of a web page.
+Document.images returns a node list of all the images in the document.
+Document.links returns a node list of all the <a> elements and <area> elements that have an href attribute.
+Document.anchors returns a node list of all the <a> elements that have a name attribute.
+Document.forms returns a node list of all the forms in the document
+
+The getElementById() method does exactly what it says on the tin. It returns a reference to the element with a unique id attribute that is given as an argument.
+getElementsByTagName() will return a live node list of all the elements with the tag name that is provided as an argument. 
+getElementsByClassName() will return a live node list of all elements that have the class name that is supplied as an argument.
+The document.querySelector() method allows you to use CSS notation to find the first element in the document that matches a CSS selector provided as an argument. If no elements match, it will return null.
+
+All HTML elements have a large number of possible attributes such as class, id, src, and href. The DOM has numerous getter and setter methods that can be used to view, add, remove or modify the value of any of these attributes.
+wonderWoman.setAttribute('class', 'villain');
+
+The classList property is a list of all the classes an element has. It has a number of methods that make it easier to modify the class of an element.
+
+The document object has a createElement() method that takes a tag name as a parameter and returns that element. 
+const flash = document.createElement('li');
+
+Every node object has an appendChild() method that will add another node (given as an argument) as a child node. 
+flash.appendChild(flashText);
+
+An element can be removed from a page using the removeChild() method. This method is called on the parent node and has a single parameter, which is the node to be removed. I
+
+Any CSS property names that are separated by dashes must be written in camelCase notation, so the dash is removed and the next letter is capitalized because dashes are not legal characters in property names.
+superman.style.backgroundColor = 'blue';
+
+Events
+
+document.body.addEventListener("click", doSomething);
+
+The click event occurs when a user clicks with the mouse, presses the Enter key, or taps the screen, making it a very useful all-round event covering many types of interaction
+
+Inline Event Handlers
+<code>&lt;p onclick="console.log('You Clicked Me!')">Click Me&lt;/p></code>
+
+Whenever an event handler is triggered by an event, the callback function is called. This function is automatically passed an event object as a parameter that contains information about the event.
+
+Types of Events
+Mouse Events
+Keyboard Events
+Modifier Keys (Pressing modifer keys such as Shift, Ctrl, Alt will fire keydown and keyup events but not the keypress event)
+Touch Events
+
+Removing Event Listeners
+onceParagraph.removeEventListener('click',remove);
+
+Stopping Default Behavior
+event.preventDefault();
+
+Event Propagation
+When you click on an element, you are actually clicking on all the elements it’s nested inside of.
+
+Event Delegation
+Event delegation can be used to attach an event listener to a parent element in order to capture events that are triggered by its child elements.
+
+</pre>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+</html>
