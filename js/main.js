@@ -13,7 +13,6 @@ const links = [
   }
  ];
 
-
  let toc = document.getElementById("toc");
 
  links.forEach(function(link) {
