@@ -1,5 +1,7 @@
 body {
    background-color: #2875ba;
+   color: whitesmoke;
+   text-shadow: 1px 2px #000;
 }
 #content {
    padding: 0 50px;
@@ -40,4 +42,14 @@ a:link, a:visited {
  ul {
    font-size: 1.5em;
    color: white;
+ }
+ 
+ #intro {
+    margin: 30px 0;
+ }
+
+ .seperator {
+    margin-top:25px;
+    border-top: solid thin black;
+    padding-top:25px;
  }

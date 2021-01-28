@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WDD 330 - Week 4</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <style type="text/css">
+      #textarea {
+         width:400px;
+         height:150px;
+      }
+   </style>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<body>
+<div id="content">
+   <div class="bold section">Week 4 Example: (<a href="../index.html">back</a>)</div>
+   <div id="intro">
+      This week we learned about forms. Play with the example below to see what we covered.
+   </div>
+   <form id="myform">
+      <div>
+         <label for="name">Name with placeholder: </label><input type="text" id="name" placeholder="Enter your name"> 
+         <button type="button" id="btnName">Show Name</button>
+         <button type="button" id="btnSetName">Set Name</button>
+      </div>
+      <div class="seperator">
+         <label for="name2">Name with pseudo placeholder: </label><input type="text" id="name2" value="Enter your name"> 
+         <button type="button" id="btnName2">Show Name</button>
+         <button type="button" id="btnSetName2">Set Name</button>
+      </div>
+      <div class="seperator">
+         <label for="password">Password: </label><input type="password" id="password" placeholder="Enter your password"> 
+         <button type="button" id="btnPassword">Show Password</button>
+      </div>
+      <div class="seperator">
+         <label for="checkbox">Checkbox: </label><input type="checkbox" id="checkbox"> 
+         <span id="checkboxstatus">Checkbox is not checked.</span>
+      </div>
+      <div class="seperator">
+         Radio Buttons: 
+         <input type="radio" name="radiobuttons" value="1" checked><label for="rbOne">One </label>
+         <input type="radio" name="radiobuttons" value="2"> <label for="rbTwo">Two </label>
+         <input type="radio" name="radiobuttons" value="3"> <label for="rbThree">Three </label> -:- 
+         <span id="radioButtonsStatus">The value selected is: 1</span>
+      </div>
+      <div class="seperator">
+         <div>Text Area</div>
+         <textarea id="textarea" placeholder="Enter some html."></textarea>
+         <div id="textareaHtml"></div>
+      </div>
+      <div class="seperator">
+         There is a hidden field with a value. <button type="button" id="btnHidden">Click here to see the value.</button>
+         <input type="hidden" id="hidden" value="Easter Egg">
+      </div>
+      <div class="seperator">
+         Form Validation
+         <div>
+            <input type="text" placeholder="This field is required" id="required" required> <input type="text" id="notrequired" placeholder="This field is not required"> 
+            <input type="submit" id="btnValidate" value="Fake Submit">
+            <span id="requiredMessage"></span>
+         </div>
+      </div>   
+      <div class="seperator">
+         JSON
+         <div>
+            <button type="button" id="btnJson">Get JSON</button>
+         </div>
+      </div>    
+   </form>
+</div>
+<script>
+   let names = ['Trenton','Jessica','Logan','Ashley','Joshua','Spencer','Carter'];
+
+   $('#btnName').click(function() {
+      alert('You entered the name ' + $('#name').val())
+   });
+
+   $('#btnSetName').click(function() {
+      
+      let index = Math.floor(Math.random() * 7);
+      $('#name').val(names[index]);
+   });
+
+   $('#btnName2').click(function() {
+      alert('You entered the name ' + $('#name2').val())
+   });
+
+   $('#btnSetName2').click(function() {
+      let index = Math.floor(Math.random() * 7);
+      $('#name2').val(names[index]);
+   });
+
+   $('#name2').focus(function() {
+      if ($('#name2').val() === 'Enter your name') {
+         $('#name2').val('');
+      }
+   });
+
+   $('#name2').blur(function() {
+      if ($('#name2').val() === '') {
+         $('#name2').val('Enter your name');
+      }
+   });
+
+   $('#btnPassword').click(function() {
+      if($('#password').attr('type') === 'password') {
+         $('#password').attr('type','text');
+         $('#btnPassword').html('Hide Password');
+      } else {
+         $('#password').attr('type','password');
+         $('#btnPassword').html('Show Password');
+      }
+   });
+
+   $('#checkbox').change(function() {
+      if($('#checkbox').is(':checked')) {
+         $('#checkboxstatus').html('Checkbox is checked.');
+      } else {
+         $('#checkboxstatus').html('Checkbox is not checked.');
+      }
+   });
+
+   $('input[type=radio][name=radiobuttons]').change(function() {
+      $('#radioButtonsStatus').html('The value selected is: ' + $(this).val());
+   });
+
+   $('#textarea').on('keyup change', function() {
+      $('#textareaHtml').html($('#textarea').val());
+   });
+
+   $('#btnHidden').click(function() {
+      alert($('#hidden').val());
+   });
+
+   $('#btnValidate').click(function() {
+      if($('#required').val() !== '') {
+         $('#requiredMessage').html('Your form would have submitted.')
+         return false;
+      } else {
+         $('#requiredMessage').html('Your form would not have submitted.')
+      }
+   });
+
+   $('#btnJson').click(function() {
+      let json = {
+         name: $('#name').val(),
+         name2: $('#name2').val(),
+         password: $('#password').val(),
+         checkbox: $('#checkbox').is(':checked'),
+         radio: $('input[name="radiobuttons"]:checked').val(),
+         textarea: encodeURI($('#password').val()),
+         hidden: $('#hidden').val(),
+         required: $('#required').val(),
+         notrequired: $('#notrequired').val()
+      };
+      alert(JSON.stringify(json));
+   });
+   
+
+</script>
+</body>
+</html>
