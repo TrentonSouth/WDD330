@@ -1,3 +1,6 @@
+body {
+   background-color: #2875ba;
+}
 #content {
    padding: 0 50px;
 }
@@ -10,3 +13,31 @@
 .section {
    margin-top:20px;
 }
+
+#laptop {
+   width: 500px;
+}
+
+#laptopDiv {
+   text-align: center;
+}
+
+h1 {
+   text-align: center;
+   color: white;
+}
+
+a:link, a:visited {
+   color: white;
+   text-decoration: none;
+   cursor: pointer;
+ }
+ 
+ a:link:hover {
+   text-decoration: underline;
+ }
+
+ ol {
+   font-size: 1.5em;
+   color: white;
+ }
