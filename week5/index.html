@@ -9,6 +9,99 @@
 </head>
 <body>
   <div class="bold section">Week 5 Notes: (<a href="../index.html">back</a>)</div>
-In Progress
+<pre>
+  <h2>Chapter 10</h2>
+  <b>System error</b> ― there’s a problem with the system or external devices with which the program is interacting.
+  <b>Programmer error</b> ― the program contains incorrect syntax or faulty logic; it could even be as simple as a typo.
+  <b>User error</b> ― the user has entered data incorrectly, which the program is unable to handle
+
+  Exceptions
+  An exception is an error that produces a return value that can be used by the program to deal with the error.
+     Example: calling a function that is not defined will result in a ReferenceError saying that the function is not defined.
+  An exception will also produce a stack trace. This shows the sequence of functions or method calls that lead to the error.
+
+  Warnings
+  A warning can occur if there is an error in the code that isn't enough to cause the program to crash.
+     Example: << JavaScript Warning: assignment to undeclared variable.
+  
+  JavaScript often fails silently and this makes errors difficult to spot and longer to track down.
+
+  -- Fail loudly in development and gracefully in production.
+
+  Strict Mode
+  Strict mode produces more exceptions and warnings and prohibits the use of some deprecated features.
+  Writing code in strict mode can impove its clarity and speed.
+  Not using strict mode is often referred to as "sloppy mode".
+  To use strict mode, all you have to do is put 'use strict'; at the top of a javascript file.
+  You can use strict mode inside of a function and it will only apply to that function.
+      The recommended way to invoke strict mode is to place all your code into a self-invoking function.
+  
+  Linting Tools
+      JS Lint
+      JS Hint
+      ES Lint
+  These can be used to test the quality of JavaScript code beyond strict mode. They will complain if certain style conventions are not followed.
+  They enforce style guides which is helpful when working on a team.
+
+Feature Detection
+JavaScript engines are constantly changing and you can't be sure your user is using an up to date browser. For this reashon, you should use an if statement to check wheter an object of method exists before trying to actuall call it.
+Modernizr is a library that offers an easy way to implement feature detection.
+Can I Use is another useful resource for checking for feature support.
+
+Debugging in the browser
+The most basic form is using alert to show values.
+Most modern JavaScript environments have a console object that profides a number of methods for logging information and debugging.
+    console.log('Display here');
+    console.trace() will log an interactive stack trace in the console. This will show the functions that were called in the lead up to an exception occuring while the code is running.
+
+Debugging Tools
+Modern browsers also support breakpoints which allow you to halt execution on a line and view the values of variables that have been declared. It also allows you to step through your code.
+The debugger keyword will create a breakpoint on the line it is used.
+**Remove debugging code prior to shipping.
+
+Error Objects
+--EvalError is not used in the current ECMAScript specification and only retained for backwards compatibility. It was used to identify errors when using the global eval() function.
+--RangeError is thrown when a number is outside an allowable range of values.
+--ReferenceError is thrown when a reference is made to an item that doesn’t exist. For example, calling a function that hasn’t been defined.
+--SyntaxError is thrown when there’s an error in the code’s syntax.
+--TypeError is thrown when there’s an error in the type of value used; for example, a string is used when a number is expected.
+--URIError is thrown when there’s a problem encoding or decoding the URI.
+--InternalError is a non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause of this is too much recursion.
+
+Throwing Exceptions
+The throw statement. This will allow for any problems in your code to be highlighted and dealt with, rather than lurk quietly in the background.
+You can throw a string, but It is best practice, however, to throw an error object. This can then be caught in a catch block.
+
+Exception Handling
+It is possible to handle exceptions gracefully by catching the error. We do this in a try/catch block and we can choose how to handle the error.
+Example:
+try {
+  let answer = 1/0;
+} catch(error) {
+  let answer = 0;
+}
+
+Tests
+A test can simply be a function that tests a piece of code runs as it should. 
+
+Test-driven Development (TDD)
+TDD is the process of writing tests before any actual code.
+This process should be followed in small piecemeal chunks every time a new feature is implemented, resulting in the following workflow:
+1. Write tests (that initially fail)
+2. Write code to pass the tests
+3. Refactor the code
+4. Test refactored code
+5. Write more tests for new features
+This is often referred to as the "red-green-refactor" cycle of TDD, as failing tests 368 JavaScript: Novice to Ninja, 2nd Editionusually show up as red, and tests that pass show as green
+
+Testing Frameworks
+Jest was created by Facebook. It makes it easy to create and run tests by providing helper methods for common test assertions.
+Jasmine was mostly used for asynchronous testing is a feature-rich JavaScript automation testing framework for JavaScript. 
+
+
+
+</code>
+
+</pre>
 </body>
 </html>
