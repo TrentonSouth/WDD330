@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WDD 330 - Week 2 Team</title>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<body>
+  <p>(<a href="../index.html">Portfolio</a>)</p>
+   <!--Part 1-->
+   <h3>Part 1</h3>
+<input type="text" id="input"><button type="button" id="btnInput" onclick="readInputWriteOutput()">Write to Div</button>
+<div id="output1"></div>
+   <!--Part 2-->
+   <h3>Part 2</h3>
+   <input type="text" id="numberToSum"><button type="button" onclick="sumNumbers()">Sum Numbers</button>
+   <div id="output2"></div>
+   <!--Part 3-->
+   <h3>Part 3</h3>
+   <input type="text" id="num1"> + <input type="text" id="num2"> <button type="button" onclick="sum()"> + </button>
+   <div id="output3"></div>
+   <!--Stretch 1-->
+   <h3>Calculator</h3>
+   <input type="text" id="snum1"> ? <input type="text" id="snum2"> 
+   <div>
+      <button type="button" onclick="calculate(addition)"> + </button> &nbsp; 
+      <button type="button" onclick="calculate(subtraction)"> - </button> &nbsp;
+      <button type="button" onclick="calculate(multiplication)"> * </button> &nbsp;
+      <button type="button" onclick="calculate(division)"> / </button>
+   </div>
+
+   <div id="stretchOutput"></div>
+   <script>
+      // Part 1
+      function readInputWriteOutput() {
+         let input = document.getElementById('input').value;
+         let output = document.getElementById('output1');
+         output.innerHTML = input;
+      }
+      // Part 2
+      function sumNumbers() {
+         let num = document.getElementById('numberToSum').value;
+         let total = 0;
+         for (let i = 1; i <= num; i++) {
+            total += i;
+         }
+         let output = document.getElementById('output2');
+         output.innerHTML = 'The total is: ' + total;
+      }
+      // Part 3
+      function sum() {
+         let num1 = document.getElementById('num1').value;
+         let num2 = document.getElementById('num2').value;
+         let total = +num1 + +num2;
+         let output = document.getElementById('output3');
+         output.innerHTML = 'The total is: ' + total;
+      }
+      // Stretch 1
+      function addition(snum1, snum2) {
+         return +snum1 + +snum2;
+      }
+      const subtraction = (snum1, snum2) => {
+         return +snum1 - +snum2;
+      }
+      const multiplication = function(snum1,snum2) {
+         return +snum1 * +snum2;
+      }
+      function division(snum1,snum2) {
+         if (+snum2 == 0) {
+            alert("You can't divide by 0");
+         } else {
+            return +snum1 / +snum2;
+         }
+      }
+      function calculate(action) {
+         let snum1 = document.getElementById('snum1').value;
+         let snum2 = document.getElementById('snum2').value;
+         let answer = action(snum1,snum2);
+         let output = document.getElementById('stretchOutput');
+         output.innerHTML = "The total is: " + answer;
+      }
+</script>
+</body>
+</html>

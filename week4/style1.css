@@ -1,0 +1,32 @@
+.board {
+   width: 600px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.square {
+   height: 200px;
+   border: solid black 1px;
+}
+
+.player {
+   font-size: 100px;
+   text-align: center;
+   padding-top: 30px;
+   margin: auto 0;
+}
+
+#reset {
+   height: 50px;
+   margin-top: 30px;
+}
+
+.turn {
+   text-align: center;
+   font-size: 2em;
+}
+
+.board {
+   width:600px;
+   margin: 50px auto;
+}

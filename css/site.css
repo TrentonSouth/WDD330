@@ -53,3 +53,8 @@ a:link, a:visited {
     border-top: solid thin black;
     padding-top:25px;
  }
+
+ #homeContent {
+    display: grid;
+    grid-template-columns: 1fr 250px 350px 1fr;
+ }

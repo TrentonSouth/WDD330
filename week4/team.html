@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WDD 330 - Week 4 Team</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<body>
+  <button type="button" id="btnToggleCSS">Show Style 2</button> (<a href="../index.html">Portfolio</a>)
+  <div class="turn">It is player 1's turn.</div>
+  <div class="board">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+  </div>
+  <button type="button" id="reset">Reset</button>
+  <script>
+      let turn = true;
+      bindSquares();
+      function bindSquares() {
+        $('.square').each(function() {
+            $(this).unbind('click');
+        });
+        $('.square').click(function () {
+            $(this).unbind('click');
+            
+            if (turn) {
+                $(this).html('<div class="player"> X </div>');
+                $('.turn').html("It is player 2's turn.");
+            } else {
+                $(this).html('<div class="player"> O </div>');
+                $('.turn').html("It is player 1's turn.");
+            }   
+
+            let message = checkResult();
+            if (message != "") {
+              $('.turn').html(message);
+              $('.square').each(function() {
+                $(this).unbind('click');
+              });
+            }            
+            turn = !turn;       
+        });
+    }
+
+    $('#reset').click(function() {
+          $('.square').html('');
+          turn = true;
+          $('.turn').html("It is player 1's turn.");
+          bindSquares();
+    });    
+
+function checkResult() {
+  let i = 0;
+  let j = 0;
+  let hasEmpty = false;
+  let squares = [[0,0,0],[0,0,0],[0,0,0]];
+
+  $(".square").each(function(){
+    if (i == 3)  {
+      i = 0;
+      j++;
+    }
+
+    squares[i][j] = $(this).text() == ' X ' ? 1 : $(this).text() == ' O ' ? -1 : 0;
+    if (squares[i][j] == 0) hasEmpty = true;
+    i++;
+  });
+
+  for(let x=0; x<3; x++) {
+    let sum = 0;
+    for(let y=0; y<3; y++) {
+      sum += squares[x][y];
+    }
+    if (sum == 3) {
+      return "X is the winner!";
+    } else if (sum == -3) {
+      return "O is the winner!";
+    }
+  }
+  for(let y=0; y<3; y++) {
+    let sum = 0;
+    for(let x=0; x<3; x++) {
+      sum += squares[x][y];
+    }
+    if (sum == 3) {
+      return "X is the winner!";
+    } else if (sum == -3) {
+      return "O is the winner!";
+    }
+  }
+  let diagLR = squares[0][0] + squares[1][1] + squares[2][2];
+  let diagRL = squares[0][2] + squares[1][1] + squares[2][0];
+
+  if (diagLR == 3 || diagRL == 3) {
+      return "X is the winner!";
+  } else if (diagLR == -3 || diagRL == -3) {
+      return "O is the winner!";
+  }
+  if(!hasEmpty) {
+    return "It is a tie!";
+  } else {
+    return "";
+  }
+};
+
+$('#btnToggleCSS').click(() => {
+    let css;
+    if($('#btnToggleCSS').html() == "Show Style 2") {
+      $('link[rel=stylesheet][href~="style1.css"]').remove();
+      css = "style2.css";
+      $('#btnToggleCSS').html('Show Style 1');
+    } else {
+      $('link[rel=stylesheet][href~="style2.css"]').remove();
+      css = "style1.css";
+      $('#btnToggleCSS').html('Show Style 2');
+    }
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('type', 'text/css');
+    link.setAttribute('href', css);
+    document.getElementsByTagName('head')[0].appendChild(link);
+  });
+  </script>
+</body>
+</html>
