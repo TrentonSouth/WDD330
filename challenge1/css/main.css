@@ -1,0 +1,78 @@
+h1 {
+   text-align: center;
+}
+
+#addItem {
+   margin-top:40px;
+}
+
+#btnAdd {
+   background-color: white;
+   border:solid thin black;
+   padding: 0 8px;
+   font-size: 30px;
+   margin-left:12px;
+}
+
+#count {
+   display:inline-block;
+   margin-right: 20px;
+}
+
+#menu {
+   border:solid thin black;
+   padding: 12px;
+}
+
+#menuButtons {
+   float: right;
+   width: 190px;
+   position:relative;
+   top: -3px;
+}
+
+#todos {
+   width: 400px;
+   margin: 0 auto;
+}
+
+#txtNewTask {
+   font-size: 16px;
+   height:32px;
+   width:320px;
+   padding: 1px 10px;
+   position: relative;
+   top: -4px;
+}
+
+.btnDelete {
+   border: none;
+   font-size: 23px;
+   float: right;
+   background-color: white;   
+}
+.completed_true {
+   text-decoration: line-through;
+}
+
+.menuButton {
+   background-color: white;
+   border: none;
+   padding: 4px 8px;
+}
+
+.menuButton:hover {
+   cursor: pointer;
+}
+
+.menuButton.active {
+   border:solid thin black;
+}
+
+.todo {
+   font-size: 24px;
+   padding:2px;
+   border: solid thin black;
+   border-bottom: none;
+}
+
