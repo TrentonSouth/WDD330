@@ -25,7 +25,9 @@ export default class ToDos {
       $.each(filtered, function(k,v) {
          html += ct.buildToDo(v);
       });
-      $('#count').html(`${activeCount} tasks left`);
+      // We only want singular if their is one task left.
+      let task_s = activeCount === 1 ? 'task' : 'tasks';
+      $('#count').html(`${activeCount} ${task_s} left`);
       $('#tasks').html('');
       $('#tasks').append(html);
    }
