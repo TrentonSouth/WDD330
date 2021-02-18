@@ -24,6 +24,11 @@ const links = [
     label: "Challenge 1",
     url: "challenge1/index.html"
   }
+  ,
+  {
+    label: "Week 7 Notes",
+    url: "week7/index.html"
+  }
  ];
 
  const linksTeams = [
@@ -50,6 +55,10 @@ const links = [
   {
     label: "No Team Activity",
     url: ""
+  },
+  {
+    label: "Week 7 Team Activity",
+    url: "week7/team/index.html"
   }
  ];
 
