@@ -54,7 +54,7 @@ class Comments {
     inputComment() {
         const t = this;
         const html = `<br><br><h2>Comments</h2>
-        <textarea style="width:300px; height: 100px"; id="inputComment"></textarea><br>
+        <textarea style="width:300px; height: 100px;" id="inputComment"></textarea><br>
         <button id="createComment" type="button">Comment</button>
         `;
         this.element.innerHTML = html;
