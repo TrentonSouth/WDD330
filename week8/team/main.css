@@ -1,0 +1,47 @@
+body {
+   background-color: gray;
+}
+
+h1 {
+   font-size: 2em;
+   text-align: center;
+}
+main {
+   width:400px;
+   margin: 0 auto;
+   background-color:lightgrey;
+}
+
+#paginator {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+#paginator>button {
+   width:100%;
+}
+
+.person_detail_row {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.hidden {
+   display: none;
+}
+
+.person {
+   display: grid;
+   grid-template-columns: 3fr 1fr 2fr;
+}
+
+.person:nth-of-type(odd) {
+   background: #e0e0e0;
+}
+
+.person_detail_row:nth-of-type(odd) {
+   background: #e0e0e0;
+}
+
+.name:hover {
+   cursor: pointer;
+}
