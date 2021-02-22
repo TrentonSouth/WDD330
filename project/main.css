@@ -1,0 +1,21 @@
+.header, .row {
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.header {
+   font-weight:bold;
+   margin: 5px 0;
+}
+
+.row:nth-child(even) {
+   background: #CCC;
+}
+
+.tense {
+   font-weight:bold;
+}
+
+#verbs {
+   margin-bottom: 30px;
+}
