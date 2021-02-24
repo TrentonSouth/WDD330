@@ -1,3 +1,5 @@
+import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.esm.js';
+
 export default class Verbs {
    constructor() {
       let to = this; // to for this object
