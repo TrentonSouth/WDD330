@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WDD 330 - Week 8</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <style type="text/css">
+   h3 {
+      margin: 15px 0 15px 30px;
+   }
+   h4 {
+      margin-left: 30px;
+   }
+   #translate1:hover {
+      transform: translate(45px);
+   }
+   #translate2:hover {
+      transform: scale(1.5, 1.5);
+   }
+   #translate3:hover {
+      transform: rotate(10deg) translateX(40px) scale(1.5);
+   }
+   #translate4 {
+      margin-top: 80px;
+      font-size:1.75em;
+      transform: skew(15deg, 4deg);
+   }
+   #transition1 {
+      width: 150px;
+      height: 150px;
+      background: red;
+      margin-top: 20px;
+      transition: background-color 2s ease-out;
+   }
+
+  #transition1:hover {
+   background-color: green;
+   cursor: pointer;
+   }
+  </style>
+</head>
+<body>
+   <div id="content">
+<div class="bold section">Week 7 Notes: (<a href="../index.html">back</a>)</div>
+<div>
+   <h1>Chapter 8 - CSS3 Transforms and Transitions</h1>
+   <h2>Transforms</h2>
+   <h3>Translation</h3>
+   <div>Hover over image. transform: translate(45px);</div>
+   <img src="./images/dukes.jpg" id="translate1">
+   <h3>Scaling</h3>
+   <div>Hover over image. transform: scale(1.5, 1.5);</div>
+   <img src="./images/dukes.jpg" id="translate2">
+   <h3>Rotation</h3>
+   <div>Hover over image. transform: rotate(10deg) translateX(40px) scale(1.5);</div>
+   <img src="./images/dukes.jpg" id="translate3">
+   <h3>Skew</h3>
+   <div id="translate4">A Skewed Perspective</div>
+
+   <h2>Transitions</h2>
+   <h3>transition-property</h3>
+   <div>Hover over box</div>
+   <pre>
+      #transition1 {
+         width: 150px;
+         height: 150px;
+         background: red;
+         margin-top: 20px;
+         transition: background-color 2s ease-out;
+      }
+   
+     #transition1:hover {
+         background-color: green;
+         cursor: pointer;
+      }
+   </pre>
+   <div id="transition1"></div>
+
+   <h2>Animations</h2>
+   <h3>Keyframes</h3>
+   <pre>
+      @keyframes moveRight {
+         from {
+            transform: translateX(-50%);
+         }
+         to {
+            transform: translateX(50%);
+         }
+         }
+      @keyframes appearDisappear {
+         0%, 100% {
+            opacity: 0;
+         }
+         20%, 80% {
+            opacity: 1;
+         }
+      }
+      @keyframes bgMove {
+         100% {
+            background-position: 120% 0;
+         }
+      }
+   </pre>
+   <h3>Animation Properties</h3>
+   <pre>
+      .verbose {
+         animation-name: appearDisappear;
+         animation-duration: 300ms;
+         animation-timing-function: ease-in;
+         animation-iteration-count: 1;
+         animation-direction: alternate;
+         animation-delay: 5s;
+         CSS3 Transforms and Transitions 209animation-fill-mode: backwards;
+         animation-play-state: running;
+         }
+      /* shorthand */
+      .concise {
+         animation: 300ms ease-in alternate 5s backwards appearDisappear;
+      }      
+   </pre>
+   <h1>Chapter 12 - Canvas, SVG, and Drag and Drop</h1>
+</div>
+</body>
+</html>

@@ -29,6 +29,11 @@ const links = [
     label: "Week 7 Notes",
     url: "week7/index.html"
   }
+  ,
+  {
+    label: "Week 8 Examples",
+    url: "week8/index.html"
+  }  
  ];
 
  const linksTeams = [
@@ -59,6 +64,11 @@ const links = [
   {
     label: "Week 7 Team Activity",
     url: "week7/team/index.html"
+  }
+  ,
+  {
+    label: "Week 8 Team Activity",
+    url: "week8/team/index.html"
   }
  ];
 

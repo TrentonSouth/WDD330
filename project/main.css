@@ -8,14 +8,58 @@
    margin: 5px 0;
 }
 
+.result {
+   text-decoration:none;
+   color:black;
+}
+
 .row:nth-child(even) {
    background: #CCC;
 }
 
 .tense {
    font-weight:bold;
+   cursor: help;
+}
+
+#content {
+   margin-top:50px;
 }
 
 #verbs {
    margin-bottom: 30px;
+}
+
+#search {
+   width: 300px;
+   padding: 3px;
+   font-size: 16px;
+   border-radius: 10px;
+}
+
+#searchContainer {
+   position: relative;
+   top: 25px;
+   left: 15px;
+   width: 300px;
+}
+
+#searchResults {
+   position: absolute;
+   width: 800px;
+   top: 10px;
+   background-color: #C0C0C0;
+   border-radius: 10px;
+   padding: 5px;
+   list-style: none;
+   display: none;
+}
+
+#searchResults li {
+      padding: 5px;
+      border-radius: 5px;
+}
+
+#searchResults li:hover {
+   background-color: white;
 }
