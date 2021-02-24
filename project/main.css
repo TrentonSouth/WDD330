@@ -1,3 +1,13 @@
+body {
+   background-image: url('./images/flag.svg');
+   background-size: cover;
+   margin:0; padding:0;
+}
+
+div.blank {
+   background-color: white;
+}
+
 .header, .row {
    display:grid;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -6,6 +16,10 @@
 .header {
    font-weight:bold;
    margin: 5px 0;
+}
+
+.hidden {
+   display:none;
 }
 
 .result {
@@ -20,10 +34,13 @@
 .tense {
    font-weight:bold;
    cursor: help;
+   padding:3px;
 }
 
 #content {
-   margin-top:50px;
+   margin:50px;
+   background-color:white;
+   padding: 20px;
 }
 
 #verbs {
@@ -31,6 +48,7 @@
 }
 
 #search {
+   margin-left: 50px;
    width: 300px;
    padding: 3px;
    font-size: 16px;
