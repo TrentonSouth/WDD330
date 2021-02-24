@@ -72,4 +72,3 @@ fetchJson(`http://trentonsouth.com/spanish/api/?verb_by_id/${$('#verbs').val()}`
       loadVerb(data);
    });
 });
-
