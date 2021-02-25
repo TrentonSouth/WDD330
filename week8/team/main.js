@@ -80,7 +80,7 @@ $('body').on('click','.name', function() {
 });
 
 $('body').on('click','.paginatorButton', function() {
-   const url = 'http://swapi.dev/api/people/?page=' + $(this).html();
+   const url = 'https://swapi.dev/api/people/?page=' + $(this).html();
    fetchPeople(url);
 });
 
