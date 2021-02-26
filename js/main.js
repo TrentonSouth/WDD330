@@ -68,7 +68,7 @@ const links = [
   ,
   {
     label: "Week 8 Team Activity",
-    url: "week8/team/index.html"
+    url: "http://trentonsouth.com/wdd330/week8/team/"
   }
  ];
 
