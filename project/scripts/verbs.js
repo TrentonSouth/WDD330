@@ -108,6 +108,7 @@ export default class Verbs {
       });
       this.quiz.loadVerb(verb[0].Verb);
       $('#hvInfinitive').val(verb[0].Verb);
+      $('.f1s,.f2s,.f3s,.f1p,.f2p,.f3p,.gerund,.past_participle').attr('title','Click to save/unsave conjugation.');
    }
 
    loadVerbs(data) {
