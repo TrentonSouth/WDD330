@@ -23,8 +23,8 @@ export default class Verbs {
             let results = to.fuse.search(`'${$('#search').val()}`);
             $('#searchResults').html('');
             $.each(results, function (k, v) {
-                  $('#searchResults').append(`<li><a class="result" href="javascript:void(0)" data-id="${v.item.Id}">
-                  <span>${v.item.Verb} - ${v.item.English}</span></a></li>`);
+                  $('#searchResults').append(`<a class="result" href="javascript:void(0)" data-id="${v.item.Id}">
+                  <li><span>${v.item.Verb} - ${v.item.English}</span></li></a>`);
             });
             $('.result').click(function() {
                $('#verbs').val($(this).data('id'));
