@@ -179,6 +179,8 @@ h2 {
 #quiz h1 {
    color: black;
    text-shadow: none;
+   margin-top: none;
+   font-size: 1.5em;
 }
 
 /* Card Flip */
@@ -189,6 +191,7 @@ h2 {
    height: 425px;
    perspective: 1000px;
    margin: 0 auto;
+   
  }
  
  .flip-card-inner {
@@ -211,6 +214,7 @@ h2 {
    height: 100%;
    -webkit-backface-visibility: hidden;
    backface-visibility: hidden;
+   border-radius: 10px;
  }
  
  .flip-card-front {
