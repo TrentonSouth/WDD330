@@ -18,10 +18,34 @@ export default class LocalStorage {
    } 
    
    getItem(name) {
-      localStorage.getItem(name);
+      return localStorage.getItem(name);
    }
 
    setItem(name,value) {
       localStorage.setItem(name,value);
+   }
+
+   setCompressedObject(name, value) {
+      value = LZString.compress(JSON.stringify(value));
+      this.setItem(name, value);
+   }
+
+   getCompressedObject(name) {
+      let value = this.getItem(name);
+      if (value === null) return {};
+      let json = LZString.decompress(value);
+      return JSON.parse(json);
+   }
+
+   setCompressedArray(name, value) {
+      value = LZString.compress(JSON.stringify(value));
+      this.setItem(name, value);
+   }
+
+   getCompressedArray(name) {
+      let value = this.getItem(name);
+      if (value === null) return [];
+      let json = LZString.decompress(value);
+      return JSON.parse(json);
    }
 }

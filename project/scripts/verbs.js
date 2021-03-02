@@ -1,7 +1,9 @@
 import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.esm.js';
+import Quiz from './quiz.js';
 
 export default class Verbs {
    constructor() {
+      this.quiz = new Quiz();
       let to = this; // to for this object
       this.fetchJson('https://trentonsouth.com/spanish/api/?verbs')
       .then(data => {
@@ -32,7 +34,20 @@ export default class Verbs {
          } else {
             $('#searchResults').hide();
          }
-      });      
+      });     
+      
+      $('#verbs').change(function() {
+         $('#btnLoad').click();
+      });
+      $('.f1s,.f2s,.f3s,.f1p,.f2p,.f3p,.gerund,.past_participle').click(function() {
+         let id = $(this).attr('id');
+        $(this).toggleClass('highlighted');
+        if ($(this).hasClass('highlighted')) {
+            to.quiz.remember($('#hvInfinitive').val(), id);
+        } else {
+            to.quiz.forget($('#hvInfinitive').val(), id);
+        }
+      });
    }
 
 
@@ -61,6 +76,7 @@ export default class Verbs {
       const imperative_affirmative_present = verb.find(v => v.Tense == 'Present' && v.Mood == 'Imperative Affirmative');
       const imperative_negative_present = verb.find(v => v.Tense == 'Present' && v.Mood == 'Imperative Negative');
       
+
       const p = ['Form_1p','Form_1s','Form_2p','Form_2s','Form_3p','Form_3s','Gerund','PastParticiple'];
       const pn = ['f1p','f1s','f2p','f2s','f3p','f3s','gerund','past_participle'];
       const mtn = ['indicative_present','indicative_future','indicative_imperfect','indicative_preterite','indicative_conditional','indicative_present_perfect','indicative_future_perfect','indicative_past_perfect','indicative_preterite_archaic','indicative_conditional_perfect','subjunctive_present','subjunctive_imperfect','subjunctive_future','subjunctive_present_perfect','subjunctive_future_perfect','subjunctive_past_perfect','imperative_affirmative_present','imperative_negative_present'];
@@ -90,6 +106,8 @@ export default class Verbs {
             $(`#${mtn[k]}_${pn[k2]}`).html(v[v2]);
          });
       });
+      this.quiz.loadVerb(verb[0].Verb);
+      $('#hvInfinitive').val(verb[0].Verb);
    }
 
    loadVerbs(data) {
@@ -107,5 +125,6 @@ export default class Verbs {
       }
       this.fuse = new Fuse(data, fuseOptions);
       $('#search').show();
+      $('#btnLoad').click();
    }
 }
