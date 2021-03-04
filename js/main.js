@@ -33,6 +33,10 @@ const links = [
   {
     label: "Week 8 Examples",
     url: "week8/index.html"
+  },
+  {
+    label: "Week 9 Notes",
+    url: "week9/index.html"
   }  
  ];
 
@@ -69,6 +73,10 @@ const links = [
   {
     label: "Week 8 Team Activity",
     url: "http://trentonsouth.com/wdd330/week8/team/"
+  },
+  {
+    label: "Week 9 Team Activity",
+    url: "week9/team/index.html"
   }
  ];
 
