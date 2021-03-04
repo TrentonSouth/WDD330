@@ -58,3 +58,14 @@ a:link, a:visited {
     display: grid;
     grid-template-columns: 1fr 250px 350px 1fr;
  }
+
+ table {
+   border-spacing: 0;
+   border-collapse: separate;   
+ }
+ td {
+    border: solid thin black;
+    padding: 4px;
+    border-spacing: 0;
+    border-collapse: separate;
+ }
