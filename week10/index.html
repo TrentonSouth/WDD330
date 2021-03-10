@@ -56,8 +56,14 @@ maxlength<br>
      .then(data => console.log(data));
 </pre>
 
-
-
+<p>Use fetch() to POST JSON-encoded data.</p>
+<br><p>Files can be uploaded using an HTML <input type="file" /> input element, FormData() and fetch().</p>
+<br><p>Files can be uploaded using an HTML <input type="file" multiple /> input element, FormData() and fetch().</p>
+<br><p>The chunks that are read from a response are not broken neatly at line boundaries and are Uint8Arrays, not strings. If you want to fetch a text file and process it line by line, it is up to you to handle these complications. The following example shows one way to do this by creating a line iterator (for simplicity, it assumes the text is UTF-8, and doesn't handle fetch errors).</p>
+<br><p>A fetch() promise will reject with a TypeError when a network error is encountered or CORS is misconfigured on the server-side, although this usually means permission issues or similar — a 404 does not constitute a network error, for example. An accurate check for a successful fetch() would include checking that the promise resolved, then checking that the Response.ok property has a value of true. The code would look something like this:</p>
+<br><p>Instead of passing a path to the resource you want to request into the fetch() call, you can create a request object using the Request() constructor, and pass that in as a fetch() method argument:</p>
+<br><p>The Headers interface allows you to create your own headers object via the Headers() constructor. A headers object is a simple multi-map of names to values:</p>
+<br><p>Since headers can be sent in requests and received in responses, and have various limitations about what information can and should be mutable, headers' objects have a guard property. This is not exposed to the Web, but it affects which mutation operations are allowed on the headers object.</p>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
