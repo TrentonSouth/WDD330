@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WDD 330 - Week 10</title>
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+   <div id="content">
+      <div class="bold section">Week 10 Notes: (<a href="../index.html">back</a>)</div>
+      <h2>Validating Forms</h2>
+<h3>Using built-in form validation</h3>
+<p>required: Specifies whether a form field needs to be filled in before the form can be submitted.</p>
+<p>minlength and maxlength: Specifies the minimum and maximum length of textual data (strings)</p>
+<p>min and max: Specifies the minimum and maximum values of numerical input types</p>
+<p>type: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</p>
+<p>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow.</p>
+<p>:valid CSS pseudo-class, which lets you apply a specific style to valid elements.</p>
+<p>:invalid CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., :out-of-range) depending on the error, which lets you apply a specific style to invalid elements.</p>
+<p>:required UI pseudo-class and the form won't submit, displaying an error message on submission when the input is empty.</p>
+<h3>Validating against a regular expression</h3>
+<pre>
+a — Matches one character that is a (not b, not aa, and so on).
+abc — Matches a, followed by b, followed by c.
+ab?c—Matches a, optionally followed by a single b, followed by c. ( ac or abc)
+ab*c—Matches a, optionally followed by any number of bs, followed by c. ( ac , abc, abbbbbc, and so on).
+a|b — Matches one character that is a or b.
+abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y, and so on).
+</pre>
+<h3>Constraining the length of your entries</h3>
+minlength<br>
+maxlength<br>
+
+<h3>Constraining the values of your entries</h3>
+<p>number -> min - max</p>
+
+<h3>ValidityState</h3>
+<p>patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match. If true, the element matches the :invalid CSS pseudo-class.</p>
+<p>tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum. If true, the element matches the :invalid CSS pseudo-class.</p>
+<p>tooShort: Returns true if the value is shorter than the minimum length specified by the minlength attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid CSS pseudo-class.</p>
+<p>rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute, or false if it is less than or equal to the maximum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</p>
+<p>rangeUnderflow: Returns true if the value is less than the minimum specified by the min attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</p>
+<p>typeMismatch: Returns true if the value is not in the required syntax (when type is email or url), or false if the syntax is correct. If true, the element matches the :invalid CSS pseudo-class.</p>
+<p>valid: Returns true if the element meets all its validation constraints, and is therefore considered to be valid, or false if it fails any constraint. If true, the element matches the :valid CSS pseudo-class; the :invalid CSS pseudo-class otherwise.</p>
+<p>valueMissing: Returns true if the element has a required attribute, but no value, or false otherwise. If true, the element matches the :invalid CSS pseudo-class.</p>
+<p>willValidate: Returns true if the element will be validated when the form is submitted; false otherwise.</p>
+
+
+<h2>Using Fetch</h2>
+      
+<p>Simple Example</p>
+<pre>
+   fetch('url')
+     .then(response => response.json())
+     .then(data => console.log(data));
+</pre>
+
+
+
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<script>
+
+</script>
+</html>
